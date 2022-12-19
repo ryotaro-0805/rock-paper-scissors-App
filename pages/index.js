@@ -5,9 +5,9 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
 
   const judge = {
-    rock: { rock: 'draw', paper: 'loss', scissors: 'win' },
-    paper: { rock: 'win', paper: 'draw', scissors: 'loss' },
-    scissors: { rock: 'loss', paper: 'win', scissors: 'draw' }
+    rock: { rock: 'Draw', paper: 'Loss', scissors: 'Win' },
+    paper: { rock: 'Win', paper: 'Draw', scissors: 'Loss' },
+    scissors: { rock: 'Loss', paper: 'Win', scissors: 'Draw' }
   }
 
   const [myHand, setMyHand] = useState('');
@@ -26,17 +26,15 @@ export default function Home() {
     num === 2 && setComHand('scissors');
   }, [status]);
 
-  const getHand = (hand) => {
+  const getHand = async(hand) => {
+    const res=judge[hand][comHand]
     setHandleAble(true);
     setMyHand(hand);
-    setResult(judge[hand][comHand]);
+    setResult(res);
+    res === 'win' && setWinNum((inData) => inData + 1);
+    res === 'draw' && setDrawNum((inData) => inData + 1);
+    res === 'loss' && setLossNum((inData) => inData + 1);
   }
-
-  useEffect(() => {
-    result === 'win' && setWinNum((inData) => inData + 1);
-    result === 'draw' && setDrawNum((inData) => inData + 1);
-    result === 'loss' && setLossNum((inData) => inData + 1);
-  }, [result]);
 
   const nextFnc = () => {
     setHandleAble(false);
@@ -53,18 +51,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="my">
+      <div className={styles.my}>
+        <h2>Rock-Paper-Scissors App</h2>
         <h3>{status}回目の勝負</h3>
-        <button onClick={() => getHand('rock')} disabled={handleAble}>ROCK</button>
-        <button onClick={() => getHand('paper')} disabled={handleAble}>PAPER</button>
-        <button onClick={() => getHand('scissors')} disabled={handleAble}>SCISSORS</button>
+        {!myHand && <h3>Select your Hand!</h3>}
+        <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>ROCK</button>
+        <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>PAPER</button>
+        <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>SCISSORS</button>
         {myHand && <p>自分:{myHand}</p>}
         {!myHand && <p>自分:Push Button</p>}
         {myHand && <p>相手:{comHand}</p>}
         {!myHand && <p>相手:Thinking</p>}
 
-        {myHand && <p>{result}</p>}
-        {myHand && <button onClick={nextFnc}>Next</button>}
+        {myHand && <h2 className={styles.myHand}>{result}</h2>}
+        {myHand && <button className={styles.button} onClick={nextFnc}>Next</button>}
         <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
       </div>
     </div>
