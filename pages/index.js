@@ -1,8 +1,50 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+  const judge = {
+    rock: { rock: 'draw', paper: 'loss', scissors: 'win' },
+    paper: { rock: 'win', paper: 'draw', scissors: 'loss' },
+    scissors: { rock: 'loss', paper: 'win', scissors: 'draw' }
+  }
+
+  const [myHand, setMyHand] = useState('');
+  const [comHand, setComHand] = useState('');
+  const [result, setResult] = useState('Victory or Defeat');
+  const [status, setStatus] = useState(1);
+  const [handleAble, setHandleAble] = useState(false);
+  const [winNum, setWinNum] = useState(0);
+  const [drawNum, setDrawNum] = useState(0);
+  const [lossNum, setLossNum] = useState(0);
+
+  useEffect(() => {
+    const num = Math.floor(Math.random() * 3);
+    num === 0 && setComHand('rock');
+    num === 1 && setComHand('paper');
+    num === 2 && setComHand('scissors');
+  }, [status]);
+
+  const getHand = (hand) => {
+    setHandleAble(true);
+    setMyHand(hand);
+    setResult(judge[hand][comHand]);
+  }
+
+  useEffect(() => {
+    result === 'win' && setWinNum((inData) => inData + 1);
+    result === 'draw' && setDrawNum((inData) => inData + 1);
+    result === 'loss' && setLossNum((inData) => inData + 1);
+  }, [result]);
+
+  const nextFnc = () => {
+    setHandleAble(false);
+    setStatus((status) => status + 1)
+    setMyHand('');
+    setComHand('');
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,61 +53,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <div className="my">
+        <h3>{status}回目の勝負</h3>
+        <button onClick={() => getHand('rock')} disabled={handleAble}>ROCK</button>
+        <button onClick={() => getHand('paper')} disabled={handleAble}>PAPER</button>
+        <button onClick={() => getHand('scissors')} disabled={handleAble}>SCISSORS</button>
+        {myHand && <p>自分:{myHand}</p>}
+        {!myHand && <p>自分:Push Button</p>}
+        {myHand && <p>相手:{comHand}</p>}
+        {!myHand && <p>相手:Thinking</p>}
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+        {myHand && <p>{result}</p>}
+        {myHand && <button onClick={nextFnc}>Next</button>}
+        <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
+      </div>
     </div>
   )
 }
