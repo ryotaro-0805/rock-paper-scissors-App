@@ -7,6 +7,14 @@ body {
     text-align: center;
 }
 
+html{
+  height: -webkit-fill-available;
+}
+body{
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 p,h1,h2,h3{
   margin: 0;
   padding: 0;
