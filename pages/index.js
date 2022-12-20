@@ -59,12 +59,12 @@ export default function Home() {
         <div className={styles.my}>
           <h3>{status}回目の勝負</h3>
           {!myHand && <h3>Select your Hand!</h3>}
-          {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
+          <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
         <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>✋</button>
-        <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button> */}
-          <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
-          <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button>
-          <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button>
+        <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button>
+          {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button> */}
+          {/* <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button> */}
+          {/* <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button> */}
 
           {myHand && <p>自分:{myHand}</p>}
           {!myHand && <p>自分:Push Button</p>}
