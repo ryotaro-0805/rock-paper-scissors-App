@@ -87,6 +87,7 @@ waving_hand
             styles.myHandDraw}
             `}>{result}</h2>:<h2 className={styles.myHand}>Win or Loss</h2>}
           {myHand && <button className={styles.button} onClick={nextFnc}>NEXT</button>}
+          {myHand && <button className={styles.button}>NEXT</button>}
           <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
         </div>
         {!myHand && <button onClick={clearFnc}>CLEAR</button>}
