@@ -52,28 +52,31 @@ export default function Home() {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className={styles.my}>
+      <header className={styles.header}>
         <h2>Rock-Paper-Scissors App</h2>
-        <h3>{status}回目の勝負</h3>
-        {!myHand && <h3>Select your Hand!</h3>}
-        {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
+      </header>
+      <main className={styles.main}>
+        <div className={styles.my}>
+          <h3>{status}回目の勝負</h3>
+          {!myHand && <h3>Select your Hand!</h3>}
+          {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
         <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>✋</button>
         <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button> */}
-        <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
-        <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button>
-        <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button>
+          <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
+          <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button>
+          <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button>
 
-        {myHand && <p>自分:{myHand}</p>}
-        {!myHand && <p>自分:Push Button</p>}
-        {myHand && <p>相手:{comHand}</p>}
-        {!myHand && <p>相手:Thinking</p>}
+          {myHand && <p>自分:{myHand}</p>}
+          {!myHand && <p>自分:Push Button</p>}
+          {myHand && <p>相手:{comHand}</p>}
+          {!myHand && <p>相手:Thinking</p>}
 
-        {myHand && <h2 className={styles.myHand}>{result}</h2>}
-        {myHand && <button className={styles.button} onClick={nextFnc}>Next</button>}
-        <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
-      </div>
-      <footer className={styles.footer}>Created by Ryotaro</footer>
+          {myHand && <h2 className={styles.myHand}>{result}</h2>}
+          {myHand && <button className={styles.button} onClick={nextFnc}>Next</button>}
+          <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
+        </div>
+      </main>
+      <footer className={styles.footer}><h2>Created by Ryotaro</h2></footer>
     </div>
   )
 }
