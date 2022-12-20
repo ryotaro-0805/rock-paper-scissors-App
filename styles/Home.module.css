@@ -9,6 +9,12 @@
   text-align: center;
 }
 
+.button_next{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+}
+
 .myHand{
   font-size: 30px;
   padding: 20px 0 20px 0;
