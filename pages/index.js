@@ -44,6 +44,13 @@ export default function Home() {
     setComHand('');
   }
 
+  const clearFnc=()=>{
+    setStatus(1);
+    setWinNum(0);
+    setLossNum(0);
+    setDrawNum(0);
+  }
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -54,7 +61,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       </Head>
       <header className={styles.header}>
-        <h2><span class="material-symbols-outlined">
+        <h2><span className="material-symbols-outlined">
 waving_hand
 </span> Rock-Paper-Scissors App</h2>
       </header>
@@ -79,11 +86,12 @@ waving_hand
             result==='Loss' ? styles.myHandLoss : 
             styles.myHandDraw}
             `}>{result}</h2>:<h2 className={styles.myHand}>Win or Loss</h2>}
-          {myHand && <button className={styles.button} onClick={nextFnc}>Next</button>}
+          {myHand && <button className={styles.button} onClick={nextFnc}>NEXT</button>}
           <h3>{`${winNum}勝　${lossNum}敗　${drawNum}引分け`}</h3>
         </div>
+        {!myHand && <button onClick={clearFnc}>CLEAR</button>}
       </main>
-      <footer className={styles.footer}><h2><span class="material-symbols-outlined">
+      <footer className={styles.footer}><h2><span className="material-symbols-outlined">
 star
 </span> Created by Ryotaro</h2></footer>
     </div>
