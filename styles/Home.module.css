@@ -6,10 +6,29 @@
   width: 33%;
   height: 50px;
   font-size: 30px;
+  text-align: center;
 }
 
 .myHand{
-  color: blue;
+  font-size: 30px;
+  padding: 20px 0 20px 0;
+  color: rgb(0, 0, 0);
+  border: solid black 1px;
+}
+
+.myHandWin{
+  font-size: 50px;
+  color:red;
+}
+
+.myHandLoss{
+  font-size: 20px;
+  color:blue;
+}
+
+.myHandDraw{
+  font-size: 30px;
+  color: rgb(0, 0, 0);
 }
 
 .header{
