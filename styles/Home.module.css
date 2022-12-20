@@ -21,8 +21,9 @@
 }
 
 .main{
-  height: 70vh;
-  min-height:calc(100svh - 30vh);
+  /* height: 70vh; */
+  /* min-height:calc(100svh - 30vh); */
+  min-height:70svh;
   background-color: rgb(150, 138, 123);
   padding: 50px;
 }
