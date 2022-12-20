@@ -20,6 +20,10 @@ p,h1,h2,h3{
   padding: 0;
 }
 
+span{
+  vertical-align: -3px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
