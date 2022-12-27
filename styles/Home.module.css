@@ -3,11 +3,12 @@
 }
 
 .button{
-  margin: 0 5px 0 5px;
+  margin: 0 2px 0 2px;
   width: 30%;
   height: 50px;
-  font-size: 30px;
+  font-size: 1.5rem;
   text-align: center;
+  overflow:hidden;
 }
 
 .button_next{
@@ -41,9 +42,16 @@
 .header{
   height: 15vh;
   background-color: antiquewhite;
+}
+
+.header div{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.header h3{
+  margin: 0;
 }
 
 .main{
@@ -52,6 +60,30 @@
   min-height:70svh;
   background-color: rgb(150, 138, 123);
   padding: 50px;
+}
+
+.sub1{
+  background-color: rgb(211, 149, 149);
+}
+
+.sub2{
+  background-color: rgb(255, 0, 0);
+}
+
+.sub3{
+  background-color: rgb(255, 0, 242);
+}
+
+.winner{
+  margin: 0;
+  padding: 0;
+  height: 100svh;
+  background: linear-gradient(rgb(94, 255, 0),rgb(66, 0, 248));
+}
+
+.winner h2{
+  margin: 0;
+  padding: 30px 0 30px 0;
 }
 
 .footer{
