@@ -109,3 +109,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.endName{
+  color: white;
+  font-size: 1.5vw;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
