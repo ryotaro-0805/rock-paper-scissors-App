@@ -75,9 +75,10 @@ export default function Home() {
         <header className={styles.header}>
           <div>
           <h2><span className="material-symbols-outlined">
-          </span> Rock-Paper-Scissors App</h2>
-          </div>
+          waving_hand</span> 
+          Rock-Paper-Scissors App</h2>
           <h3>Your Winner if you would win 5 times continuously!</h3>
+          </div>
         </header>
         <main className={
           conWin > 1 ? `${mainStyle[0]} ${mainStyle[conWin - 1]}` : mainStyle[0]
@@ -108,9 +109,7 @@ export default function Home() {
           {!myHand && <button onClick={clearFnc}>CLEAR</button>}
           <p>連続{conWin}勝中</p>
         </main >
-        <footer className={styles.footer}><h2><span className="material-symbols-outlined">
-          star
-        </span> Created by Ryotaro</h2></footer>
+        <footer className={styles.footer}><h2><span className="material-symbols-outlined">star</span>2022-Dec. ~Created by Ryotaro~</h2></footer>
       </div >
       :
       <div className={styles.winner}>
