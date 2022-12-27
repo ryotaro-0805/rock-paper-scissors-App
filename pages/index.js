@@ -47,7 +47,7 @@ export default function Home() {
     setStatus((status) => status + 1)
     setMyHand('');
     setComHand('');
-    conWin>4 && setConWin(0);
+    conWin > 4 && setConWin(0);
   }
 
   const clearFnc = () => {
@@ -59,12 +59,12 @@ export default function Home() {
 
   const mainStyle = [styles.main, styles.sub1, styles.sub2, styles.sub3, styles.sub4];
 
-  const [test,setTest]=useState(1);
+  const [test, setTest] = useState(1);
 
   // conWin===5 ? setTest(0) : setTest(1);
 
   return (
-    conWin<5 ?
+    conWin < 5 ?
       <div className={styles.container}>
         <Head>
           <title>Rock-Paper-Scissors App</title>
@@ -75,10 +75,10 @@ export default function Home() {
         </Head>
         <header className={styles.header}>
           <div>
-          <h2><span className="material-symbols-outlined">
-          waving_hand</span> 
-          Rock-Paper-Scissors App</h2>
-          <h3>Your Winner if you would win 5 times continuously!</h3>
+            <h2><span className="material-symbols-outlined">
+              waving_hand</span>
+              Rock-Paper-Scissors App</h2>
+            <h3>Your Winner if you would win 5 times continuously!</h3>
           </div>
         </header>
         <main className={
@@ -88,8 +88,8 @@ export default function Home() {
             <h3>{status}回目の勝負</h3>
             {!myHand && <h3>Select your Hand!</h3>}
             <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
-        <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>✋</button>
-        <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button>
+            <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>✋</button>
+            <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button>
             {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
             <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button>
             <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button> */}
@@ -122,11 +122,11 @@ export default function Home() {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </Head>
         <div>
-        <h2>You are Winner!!</h2>
-        <button onClick={nextFnc}>Challenge Again</button>
-        <p className={styles.endName}>Congratulations!!<br /><span class="material-symbols-outlined">
-rocket_launch
-</span> This App is created by Ryotaro</p>
+          <h2>You are Winner!!</h2>
+          <button onClick={nextFnc}>Challenge Again</button>
+          <p className={styles.endName}>Congratulations!!<br /><span class="material-symbols-outlined">
+            rocket_launch
+          </span> This App is created by Ryotaro</p>
         </div>
       </div>
   )
