@@ -21,7 +21,8 @@ export default function Home() {
   const [conWin, setConWin] = useState(0);
 
   useEffect(() => {
-    const num = Math.floor(Math.random() * 3);
+    // const num = Math.floor(Math.random() * 3);
+    const num = Math.floor(Math.random() * 1);
     num === 0 && setComHand('rock');
     num === 1 && setComHand('paper');
     num === 2 && setComHand('scissors');
@@ -113,8 +114,10 @@ export default function Home() {
       </div >
       :
       <div className={styles.winner}>
+        <div>
         <h2>You are Winner!!</h2>
         <button onClick={nextFnc}>Challenge Again</button>
+        </div>
       </div>
   )
 }
