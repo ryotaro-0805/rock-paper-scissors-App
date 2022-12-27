@@ -40,7 +40,7 @@
 }
 
 .header{
-  height: 20vh;
+  height: 10svh;
   background-color: antiquewhite;
   display: flex;
   align-items: center;
@@ -61,9 +61,10 @@
 .main{
   /* height: 70vh; */
   /* min-height:calc(100svh - 30vh); */
-  min-height:70svh;
+  height:80svh;
   background-color: rgb(150, 138, 123);
-  padding: 50px;
+  padding: 10px;
+  overflow: scroll;
 }
 
 .sub1{
@@ -91,7 +92,7 @@
 }
 
 .footer{
-  height: 10vh;
+  height: 10svh;
   background-color: rgb(202, 133, 42);
   display: flex;
   justify-content: center;
