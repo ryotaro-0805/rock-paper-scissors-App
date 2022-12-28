@@ -87,12 +87,12 @@ export default function Home() {
           <div className={styles.my}>
             <h3>{status}回目の勝負</h3>
             {!myHand && <h3>Select your Hand!</h3>}
-            <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
+            {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>✊</button>
             <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>✋</button>
-            <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button>
-            {/* <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
+            <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>✌</button> */}
+            <button className={styles.button} onClick={() => getHand('rock')} disabled={handleAble}>Rock</button>
             <button className={styles.button} onClick={() => getHand('paper')} disabled={handleAble}>Paper</button>
-            <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button> */}
+            <button className={styles.button} onClick={() => getHand('scissors')} disabled={handleAble}>Scissors</button>
 
             {myHand && <p>自分:{myHand}</p>}
             {!myHand && <p>自分:Push Button</p>}
@@ -110,7 +110,12 @@ export default function Home() {
           {!myHand && <button onClick={clearFnc}>CLEAR</button>}
           <p>連続{conWin}勝中</p>
         </main >
-        <footer className={styles.footer}><h2><span className="material-symbols-outlined">star</span>2022-Dec. ~Created by Ryotaro~</h2></footer>
+        <footer className={styles.footer}>
+          <h2>
+            <span className="material-symbols-outlined">star</span>
+            2022-Dec. ~Created by Ryotaro~
+          </h2>
+        </footer>
       </div >
       :
       <div className={styles.winner}>
@@ -123,6 +128,7 @@ export default function Home() {
         </Head>
         <div>
           <h2>You are Winner!!</h2>
+          <p>Thank you for playing</p>
           <button onClick={nextFnc}>Challenge Again</button>
           <p className={styles.endName}>Congratulations!!<br /><span class="material-symbols-outlined">
             rocket_launch

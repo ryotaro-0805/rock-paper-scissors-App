@@ -79,6 +79,16 @@
   background-color: rgb(255, 0, 242);
 }
 
+
+.footer{
+  height: 10svh;
+  font-size: 2.5vw;
+  background-color: rgb(202, 133, 42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .winner{
   margin: 0;
   padding: 0;
@@ -87,14 +97,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(rgb(94, 255, 0),rgb(66, 0, 248)); */
-  background-color: antiquewhite;
+  background: linear-gradient(rgb(94, 255, 0),rgb(66, 0, 248));
+  /* background-color: antiquewhite; */
 }
 
-.winner h2{
-  margin: 0;
-  padding: 10px 0 10px 0;
-  font-size: 7vw;
+.endName{
+  width: 100%;
+  color: white;
+  font-size: 4vw;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .winner div button{
@@ -102,20 +116,12 @@
   /* height: 30px; */
 }
 
-.footer{
-  height: 10svh;
-  font-size: 1.5vw;
-  background-color: rgb(202, 133, 42);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.winner div h2{
+  margin: 0;
+  font-size: 7vw;
+  text-shadow:darkblue 3px 3px 3px;
 }
 
-.endName{
-  color: white;
-  font-size: 4vw;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.winner div p{
+  margin: 0 0 20px 0;
 }
