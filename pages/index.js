@@ -73,7 +73,7 @@ export default function Home() {
                 <span className="material-symbols-outlined">waving_hand</span>
                 Rock-Paper-Scissors App
               </h2>
-              <h3>Your Winner if you would win 5 times continuously!</h3>
+              <h3>You are Winner if you would win 5 times continuously!</h3>
             </div>
           </header>
           <main className={
